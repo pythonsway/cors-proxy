@@ -11,6 +11,11 @@ def addTag(html):
     return result
 
 
+@app.route('/ping')
+def hello_world():
+    return 'pong'
+
+
 @app.route('/<path:url>', defaults={'bot': None})
 @app.route('/<bot>/<path:url>')
 def proxy(bot, url):
